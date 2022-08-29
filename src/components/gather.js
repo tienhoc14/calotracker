@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TouchableOpacity, TouchableHighlight } from 'react-native'
+import { View, SafeAreaView, TouchableOpacity, ToastAndroid } from 'react-native'
 import React, { useState } from 'react'
 import styles from '../style/gather.style'
 import MyAppText from './MyAppText'
@@ -6,12 +6,23 @@ import RadioForm, { RadioButton, RadioButtonInput, RadioButtonLabel } from 'reac
 import { Ionicons } from '@expo/vector-icons';
 import { StatusBar } from 'expo-status-bar';
 import LoadingBar from './LoadingBar';
+import DatePicker from './DatePicker';
+import GatherInput from './GatherInput';
 
 const Gather = ({ navigation, title, next, radio_props, initial, loading }) => {
 
   const note = 'This information to calculate and provide you with daily personalized recommendations.'
 
   const [goal, setGoal] = useState(initial)
+
+  const gatherFilter = (loading) => {
+    if (loading === 3) {
+      return <DatePicker getDate={setGoal} />
+    }
+    if (loading === 4) {
+      return <GatherInput getIndex={setGoal} />
+    }
+  }
 
   return (
     <>
@@ -31,6 +42,8 @@ const Gather = ({ navigation, title, next, radio_props, initial, loading }) => {
         <View style={styles.body}>
 
           <MyAppText content={title} style={styles.title} />
+
+          <View>{gatherFilter(loading)}</View>
 
           <RadioForm
             buttonColor='#21BA3A'
