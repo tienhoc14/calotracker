@@ -22,6 +22,9 @@ const Gather = ({ navigation, title, next, radio_props, initial, loading }) => {
     if (loading === 4) {
       return <GatherInput getIndex={setGoal} />
     }
+    if (loading === 5) {
+      
+    }
   }
 
   return (

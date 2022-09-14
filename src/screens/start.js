@@ -4,8 +4,6 @@ import styles from '../style/start.style'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import MyAppText from '../components/MyAppText'
 
-import image from '../images/background.png'
-
 const Started = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>

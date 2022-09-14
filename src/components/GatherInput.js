@@ -3,10 +3,9 @@ import React, { useState } from 'react'
 import MyAppText from './MyAppText'
 
 const GatherInput = (props) => {
-    const [Cm, setCm] = useState(styles.unitSelected)
-    const [Ft, setFt] = useState()
-    const [Lbs, setLbs] = useState()
-    const [Kg, setKg] = useState(styles.unitSelected)
+
+    const [WeightUnits, setWeightUnits] = useState(1)
+    const [HeightUnits, setHeightUnits] = useState(1)
 
     const [height, setHeight] = useState()
     const [weight, setWeight] = useState()
@@ -24,22 +23,22 @@ const GatherInput = (props) => {
             <View style={styles.unitWrapper}>
                 <TouchableOpacity
                     onPress={() => {
-                        setFt(styles.unitSelected)
-                        setCm()
+                        setWeightUnits(1)
                     }}
                     activeOpacity={1}
                 >
-                    <MyAppText content={'ft/in'} style={[styles.unit, Ft]} />
+                    <MyAppText content={'ft/in'}
+                        style={[styles.unit,
+                        WeightUnits == 1 && styles.unitSelected]} />
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     onPress={() => {
-                        setCm(styles.unitSelected)
-                        setFt()
+                        setWeightUnits(2)
                     }}
                     activeOpacity={1}
                 >
-                    <MyAppText content={'cm'} style={[styles.unit, Cm]} />
+                    <MyAppText content={'cm'} style={[styles.unit, WeightUnits == 2 && styles.unitSelected]} />
                 </TouchableOpacity>
             </View>
 
@@ -53,22 +52,20 @@ const GatherInput = (props) => {
             <View style={styles.unitWrapper}>
                 <TouchableOpacity
                     onPress={() => {
-                        setLbs(styles.unitSelected)
-                        setKg()
+                        setHeightUnits(1)
                     }}
                     activeOpacity={1}
                 >
-                    <MyAppText content={'lbs'} style={[styles.unit, Lbs]} />
+                    <MyAppText content={'lbs'} style={[styles.unit, HeightUnits == 1 && styles.unitSelected]} />
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     onPress={() => {
-                        setKg(styles.unitSelected)
-                        setLbs()
+                        setHeightUnits(2)
                     }}
                     activeOpacity={1}
                 >
-                    <MyAppText content={'kg'} style={[styles.unit, Kg]} />
+                    <MyAppText content={'kg'} style={[styles.unit, HeightUnits == 2 && styles.unitSelected]} />
                 </TouchableOpacity>
             </View>
         </View>

@@ -5,7 +5,7 @@ import Gather from '../components/gather'
 const WeeklyGoal = ({ navigation }) => {
     return (
         <Gather
-            title={'Set your weekly goal'}
+            title={'Goal weight'}
             loading={5}
             navigation={navigation}
             next={'Register'} />
