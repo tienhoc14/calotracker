@@ -8,6 +8,7 @@ import BodyIndex from './src/gathers/bodyIndex';
 import Gender from './src/gathers/gender';
 import SetGoal from './src/gathers/setGoal';
 import WeeklyGoal from './src/gathers/WeeklyGoal';
+import HomeScreen from './src/screens/HomeScreen';
 import Login from './src/screens/login';
 import Register from './src/screens/register';
 import Started from './src/screens/start';
@@ -27,6 +28,7 @@ export default function App() {
         <Stack.Screen name='BodyIndex' component={BodyIndex} />
         <Stack.Screen name='WeeklyGoal' component={WeeklyGoal} />
         <Stack.Screen name='Register' component={Register} />
+        <Stack.Screen name='Home' component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );

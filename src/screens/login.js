@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native'
+import { View, SafeAreaView, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native'
 import React, { useState } from 'react'
 import styles from '../style/login.style'
 import { Ionicons } from '@expo/vector-icons';
@@ -60,7 +60,10 @@ const Login = ({ navigation }) => {
 
             </KeyboardAvoidingView>
             <TouchableOpacity style={styles.btnLogin}
-                onPress={handleLogin}
+                onPress={() => {
+                    handleLogin
+                    navigation.navigate('Home')
+                }}
                 activeOpacity={0.5} >
                 <MyAppText content={'LOG IN'} style={styles.txtLogin} />
             </TouchableOpacity>

@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ImageBackground } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import styles from '../style/start.style'
 import { SafeAreaView } from 'react-native-safe-area-context'

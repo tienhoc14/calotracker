@@ -1,10 +1,10 @@
-import { View, Text, SafeAreaView, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native'
+import { View, SafeAreaView, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native'
 import React, { useState } from 'react'
 import styles from '../style/login.style'
 import { Ionicons } from '@expo/vector-icons';
 import MyAppText from '../components/MyAppText';
 
-const Register = () => {
+const Register = ({navigation}) => {
 
   const [focusName, setFocusName] = useState(null)
   const [focusEmail, setFocusEmail] = useState(null)
@@ -30,7 +30,9 @@ const Register = () => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.body}>
 
-        <View style={styles.header}>
+        <TouchableOpacity 
+        onPress={()=>navigation.goBack()}
+        style={styles.header}>
           <Ionicons name="arrow-back"
             style={styles.arrowBack}
             size={25}
@@ -38,7 +40,7 @@ const Register = () => {
             onPress={() => { navigation.goBack() }} />
 
           <MyAppText content={'Register'} style={styles.titleLogin} />
-        </View>
+        </TouchableOpacity>
 
         <TextInput style={[styles.input, focusName]}
           onFocus={() => setFocusName(styles.focusOn)}
