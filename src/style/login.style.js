@@ -26,16 +26,12 @@ const styles = StyleSheet.create({
         alignSelf: "flex-start",
         marginTop: 30,
         borderBottomWidth: 1,
-        borderBottomColor: '#DED7CE',
         width: '100%',
         textDecorationLine: "none",
         height: 50,
         fontSize: 14,
         paddingStart: 10,
         fontFamily: 'monospace'
-    },
-    focusOn:{
-        borderBottomColor: '#21BA3A',
     },
     forgotWrapper: {
         marginTop: 30,

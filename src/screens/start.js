@@ -8,7 +8,7 @@ const Started = ({ navigation }) => {
     return (
         <SafeAreaView style={styles.container}>
 
-            <MyAppText content="Calories Tracker" style={styles.title} />
+            <MyAppText content="Calories Tracker" style={styles.title} fontSize={35} />
             <View style={styles.action}>
                 <TouchableOpacity style={styles.btnStart}
                     onPress={() => { navigation.navigate('SetGoal') }} >

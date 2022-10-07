@@ -13,7 +13,6 @@ const styles = StyleSheet.create({
     title: {
         textAlign: "center",
         marginTop: windowHeight / 3,
-        fontSize: 25,
         fontWeight: "bold",
     },
     btnStart: {

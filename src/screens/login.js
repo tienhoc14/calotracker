@@ -6,8 +6,7 @@ import MyAppText from '../components/MyAppText';
 
 const Login = ({ navigation }) => {
 
-    const [focusEmail, setFocusEmail] = useState(null)
-    const [focusPassword, setFocusPassword] = useState(null)
+    const [checkFocus, setCheckFocus] = useState(0)
 
     const [checkLogin, setCheckLogin] = useState({
         email: '',
@@ -38,17 +37,19 @@ const Login = ({ navigation }) => {
                     <MyAppText content={'Log in'} style={styles.titleLogin} />
                 </View>
 
-                <TextInput style={[styles.input, focusEmail]}
-                    onFocus={() => setFocusEmail(styles.focusOn)}
-                    onBlur={setFocusEmail}
+                <TextInput style={[styles.input, {
+                    borderBottomColor: checkFocus == 1 ? '#21BA3A' : '#DED7CE',
+                }]}
+                    onFocus={() => { setCheckFocus(1) }}
                     autoFocus={true}
                     placeholder={'Email'}
                     value={checkLogin.email}
                     onChangeText={text => handleChangeText('email', text)} />
 
-                <TextInput style={[styles.input, focusPassword]}
-                    onFocus={() => setFocusPassword(styles.focusOn)}
-                    onBlur={setFocusPassword}
+                <TextInput style={[styles.input, {
+                    borderBottomColor: checkFocus == 2 ? '#21BA3A' : '#DED7CE',
+                }]}
+                    onFocus={() => { setCheckFocus(2) }}
                     secureTextEntry={true}
                     placeholder={'Password'}
                     value={checkLogin.password}

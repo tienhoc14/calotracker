@@ -4,7 +4,7 @@ import styles from '../style/login.style'
 import { Ionicons } from '@expo/vector-icons';
 import MyAppText from '../components/MyAppText';
 
-const Register = ({navigation}) => {
+const Register = ({ navigation }) => {
 
   const [focusName, setFocusName] = useState(null)
   const [focusEmail, setFocusEmail] = useState(null)
@@ -30,9 +30,9 @@ const Register = ({navigation}) => {
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         style={styles.body}>
 
-        <TouchableOpacity 
-        onPress={()=>navigation.goBack()}
-        style={styles.header}>
+        <TouchableOpacity
+          onPress={() => navigation.goBack()}
+          style={styles.header}>
           <Ionicons name="arrow-back"
             style={styles.arrowBack}
             size={25}
@@ -75,7 +75,10 @@ const Register = ({navigation}) => {
           style={{ fontSize: 12, color: '#5C5C5C', textAlign: 'center', bottom: 50, }} />
 
         <TouchableOpacity style={styles.btnLogin}
-          onPress={handleLogin}
+          onPress={() => {
+            handleLogin
+            navigation.navigate('Home')
+          }}
           activeOpacity={0.5} >
           <MyAppText content={'REGISTER'} style={styles.txtLogin} />
         </TouchableOpacity>
